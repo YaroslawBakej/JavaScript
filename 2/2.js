@@ -191,5 +191,136 @@
 //     console.log(`некорректный ввод`);
 // }
 
+// Напишите программу, в которой рассчитывается сумма и произведение цифр
+// положительного трёхзначного числа
+// 123 -> Сумма цифр = 6 Произведение цифр = 6
 
+// Пользователь вводит четырехзначное число. Напишите скрипт, который будет
+// выявлять является ли каждое составляющее числа четным либо нечетным.
+// Добавить проверку на ввод только чисел
+// 1234 -> 1 – неч 2 – чет 3 – неч 4 - чет
 
+// let a = prompt(`введите четырехзначное число`)
+
+// if (!isNaN(a) && a.length == 4) {
+//     String(a)
+//     let x = Array.from(String(a))
+//     console.log(x);
+
+// x.forEach(function (item, i, arr) {
+//     if (item % 2 == 0 && item != 0) {
+//         console.log(item + ` четное`)
+//     } else if (item != 0) {
+//         console.log(item + ` нечетное`);
+//     } else {
+//         console.log(item + ` ноль`);
+//     }
+// })
+// } else {
+//     console.log(`некорректный ввод`)
+// }
+
+// Пользователь вводит 2 числа от 0 до 10. Сложите переменные так, чтобы в
+// результате получилось выражение: “I’m хх". Проверки на ввод только чисел.
+// Проверки на ввод чисел до 10. Если первое число – 0, то опустить его
+
+// let a = prompt(`enter value`)
+// let b = prompt(`enter value 2`)
+
+// if (!isNaN(a, b) && a, b <= 10) {
+//     if (a == 0) {
+//         console.log(``)
+//     } else {
+//         console.log(a + b);
+//     }
+// }else{
+//     console.log(`некорректный ввод`)
+// }
+
+// Пользователь вводит строку. Необходимо сделать проверку, что это не число и
+// вывести длину строки
+
+// let a=prompt(`enter your message`)
+
+// // if (isNaN(a)){
+// //     console.log(a.length);
+// // } else{
+// //     console.log(`enter message`);
+// // }
+// isNaN(a)? console.log(a.length):console.log(`enter message`);
+
+// Пользователь вводит строку. Вывести первый символ строки (индексы)
+
+// let a=prompt(`enter your message`)
+
+// console.log(a[0]);
+
+// Пользователь вводит строку. Необходимо сделать проверку, что это не число и
+// вывести текущую строку в большом регистре
+
+// let a=prompt(`enter your message`)
+
+// // if(isNaN(a)){
+// //     console.log(a.toUpperCase());
+// // }else{
+// //     console.log(`enter a string`);
+// // }
+
+// isNaN(a)?console.log(a.toUpperCase()):console.log(`enter a string`);
+
+// Пользователь вводит строку. Необходимо повторить ее трижды
+
+// let a=prompt(`enter your message`)
+
+// console.log(a.repeat(3));
+
+// Ввести строку. Проверить является ли это число или текст. Если число, то
+// выяснить, четное или нет. Если это текст и равен “hschool”, вывести true. В
+// противном случае false
+
+// let a = prompt(`enter your message`)
+//     b=`hschool`
+// if (isNaN(a)) {
+//     if (a == b) {
+//         console.log(`true`);
+//     } else {
+//         console.log(`false`);
+//     }
+// }else{
+//     if(a%2==0){
+//         console.log(`четное`);
+//     }else{
+//         console.log(`нечетное`);
+//     }
+// }
+
+// Пользователь вводит строку. Применить метод для разбития строки на массив.
+// Добавить проверку на ввод только текста
+
+// let a=prompt(`enter your message`)
+
+// // if(isNaN(a)){
+// //     console.log(Array.from(a));
+// // }else{
+// //     console.log(`enter your message`);
+// // }
+
+// isNaN(a)?console.log(Array.from(a)):console.log(`enter your message`);
+
+// Пользователь ввел строку. Убрать лишние пробелы, привести к маленькому
+// регистру. Добавить проверку на ввод только текста. Необходимо преобразовать
+// строку в строку вида
+// х-х-х-х-х-х...
+// hsChOoL -> h-s-c-h-o-o-l
+
+let a=prompt(`enter your message`)
+
+let b=Array.from(a)
+let c=[];
+console.log(b);
+for(let i=0; i<b.length;i++){
+    if(b[i]!=0){
+    c.push(b[i]);
+}
+} 
+console.log(c.join(`_`));
