@@ -131,7 +131,7 @@
 
 // let a = prompt(`enter value`).toLowerCase()
 // for (i = 0; i < a.length; i++) {
-//     if (a[i] != `a` || a[i] != `e` || a[i] != `y` || a[i] != `u` || a[i] != `i` || a[i] != `o`) {
+//     if (a[i] != `a` && a[i] != `e` && a[i] != `y` && a[i] != `u` && a[i] != `i` && a[i] != `o`) {
 //         counter += 1
 //     }
 // }
