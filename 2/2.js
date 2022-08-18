@@ -313,14 +313,25 @@
 // х-х-х-х-х-х...
 // hsChOoL -> h-s-c-h-o-o-l
 
-let a=prompt(`enter your message`)
+// let a = prompt(`enter your message`)
 
-let b=Array.from(a)
-let c=[];
-console.log(b);
-for(let i=0; i<b.length;i++){
-    if(b[i]!=0){
-    c.push(b[i]);
-}
-} 
-console.log(c.join(`_`));
+// let b = Array.from(a)
+// let c = [];
+// console.log(b);
+// for (let i = 0; i < b.length; i++) {
+//     if (b[i] != 0) {
+//         c.push(b[i]);
+//     }
+// }
+// console.log(c.join(`_`));
+
+// let a = prompt(`enter your message`).split(``)
+
+// let c = [];
+// console.log(a);
+// for (let i = 0; i < a.length; i++) {
+//     if (a[i] != 0) {
+//         c.push(a[i]);
+//     }
+// }
+// console.log(c.join(`_`));
