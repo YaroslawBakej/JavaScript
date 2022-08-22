@@ -143,8 +143,8 @@
 // тест -> false
 
 // let a = prompt(`enter your string`)
-// let b = a.split(``).reverse().join(``)
-// if (a == b) {
+
+// if (a == a.split(``).reverse().join(``)) {
 //     console.log(`true`);
 // } else {
 //     console.log(`false`);
