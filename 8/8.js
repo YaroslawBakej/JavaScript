@@ -130,15 +130,10 @@
 // значения массива -> [1, 5] (for)(while)(for of)
 
 // let arr = [1, 2, 2, 3, 4, 4, 3, 4, 5].sort()
+
 // for (let i = 0; i < arr.length; i++) {
-
-// }
-
-// let arr = [1, 2, 2, 3, 4, 4, 3, 4, 5]
-
-// for (const item of arr) {
-//     if (item === 1 || item === 5) {
-//         console.log(item);
+//     if (arr[i] != arr[i + 1] && arr[i] != arr[i - 1]) {
+//         console.log(arr[i]);
 //     }
 // }
 
@@ -277,4 +272,4 @@
 //         res += a[i]
 //     }
 // }
-// console.log(res);
+// console.log(res)
