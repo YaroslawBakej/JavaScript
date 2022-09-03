@@ -449,6 +449,8 @@ if (arr.some(isNull)) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] != 0) {
             res += +arr[i]
+        } else {
+            break
         }
     }
 } else {
@@ -459,6 +461,8 @@ if (arr.some(isNull)) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] != 0) {
             res += +arr[i]
+        } else {
+            break
         }
     }
 
