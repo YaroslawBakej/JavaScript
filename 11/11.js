@@ -131,25 +131,32 @@
 // const obj_values = Object.values(obj)
 // console.log(obj_values);
 
-let arr = [{ "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+let bd = [{ "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
 { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
 { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
 { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
 { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }]
 
-let obj = { "label": `Test`, "category": "test", "priority": "1" }
+function create(o) {
+    o.id = o.label.toLowerCase();
+    const exist = !!bd.find(b => b.label === o.label); 
+    if (exist) return;
 
-const new_arr = arr.filter(el => {
-    return el.label !== obj.label
-})
-if (new_arr.length == arr.length) {
-    arr.push({ id: obj.label.toLowerCase(), ...obj })
+    bd.push(o)
 }
-let obj2 = { 'id': `test`, 'label': `Test`, 'category': `test`, 'priority': '1' }
 
+function update(o) {
+    let a = bd.find(b => b.id === o.id);
+    Object.keys(a).forEach(key => {
+        if (key in o) {
+            a[key] = o[key]
+        }
+    })
+}
 
+function del(o) {
+    bd = bd.filter(b => b.id !== o.label.toLowerCase())
+}
 
-
-
-
+console.log(create(bd));
 
