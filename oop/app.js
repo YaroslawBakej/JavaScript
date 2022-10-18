@@ -288,3 +288,255 @@
 
 // const hashtag = new Hashtag(10)
 // console.log(hashtag.doHashtag());
+
+// // 1. Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// // кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivide
+// class DomHtml {
+//     constructor() {
+//         this.main()
+//     }
+//     main() {
+//         btn.addEventListener("click", () => {
+//             let value1 = document.querySelector(".one").value
+//             let value2 = document.querySelector(".two").value
+//             this.doPlus(value1, value2)
+//             this.doMinus(value1, value2)
+//             this.doMultiply(value1, value2)
+//             this.doDivide(value1, value2)
+//         })
+
+
+//     }
+//     doPlus() {
+//         return document.querySelector(".DoPlus").innerHTML = value1 + value2
+//     }
+//     doMinus() {
+//         return document.querySelector(".DoMinus").innerHTML = value1 - value2
+//     }
+//     doMultiply() {
+//         return document.querySelector(".DoMultiply").innerHTML = value1 * value2
+//     }
+//     doDivide() {
+//         return document.querySelector(".DoDivide").innerHTML = value1 + value2
+//     }
+// }
+
+// const domHtml = new DomHtml()
+// 2. Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 1 метод валидации, называемый middleware, в котором
+// происходит проверка на почту. Вывести true, если провека успешна
+// !/^[\w\d]+@[\w]+\.[\w]{1,4}$/g.test(mail)
+
+// class DomHtml {
+//     constructor() {
+//         this.main()
+//     }
+//     main() {
+//         let btn = document.querySelector(".btn")
+//         btn.addEventListener("click", () => {
+//             let mail = document.querySelector(".one").value
+//             this.middleware(mail)
+//         })
+//     }
+//     middleware(mail) {
+//         try {
+//             if (!/^[\w\d]+@[\w]+\.[\w]{1,4}$/g.test(mail)) throw new Error(`ашипка`)
+//             alert(`Успешная валидация`)
+//         } catch (error) {
+//             return error.message
+//         }
+//     }
+// }
+// const domHtml = new DomHtml()
+
+// 3. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
+// controller, service, repository. Цепочка взаимодействия между методами
+// следующая:
+// controller -> service -> repository, где:
+// controller – функция, принимающая данные. Принимает json
+// service – функция проверки на то что с repository вернулось значение
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие
+// с этим массивом осуществляется только в repository. Массив находится в
+// приложении
+// Задание:
+// Необходимо вывести в консоль весь массив
+
+// class ServerGetAll {
+//     constructor() {
+//         this.controller()
+//     }
+//     controller() {
+//         try {
+//             let serv = this.service()
+//             document.querySelector(".doPlus").innerHTML = JSON.stringify(serv)
+//         } catch (error) {
+//             alert(error.message)
+//         }
+
+//     }
+//     service() {
+//         const check = this.repository()
+//         if (!check) throw new Error(`ашипка`)
+//         return check
+//     }
+//     repository() {
+//         let arr = `[
+//             {"id": 1, "name": "Yesenia", "age": 22},
+//             { "id": 2, "name": "Hanna", "age": 22},
+//             { "id": 3, "name": "Stanislau", "age": 25 },
+//             { "id": 4, "name": "German", "age": 18 },
+//             { "id": 5, "name": "Maria", "age": 27 }
+//         ]`
+//         return JSON.parse(arr)
+//     }
+// }
+
+// const serverGetAll = new ServerGetAll()
+
+// class DomHtml {
+//     constructor() {
+//         this.click()
+//     }
+
+//     count = 0
+
+//     click() {
+//         const btn = document.querySelector(".btn")
+//         btn.addEventListener("click", () => {
+//             this.count++
+//             console.log(this.count);
+//         })
+//     }
+// }
+// const domHtml = new DomHtml()
+
+
+// 2. Реализуйте класс Client, содержащий метод sendRequest. Ваша задача получить
+// данные из 2 инпутов: почта и пароль и по клику на кнопку «отправить запрос на
+// сервер» (отправку запроса мы не проходили => просто вывести на экран
+// образовавщийся объект вида: {email: email, pwd: pwd
+
+// 3. Реализуйте класс Server, получающий объект из предыдущего задания и
+// сохраняющий его в «БД» (массив) при условии, что email уникальный. Создать
+// генерацию нового id. Обязательными функциями считаются функции middleware,
+// controller, service, repository. Цепочка взаимодействия между методами
+// следующая:
+// middleware -> controller -> service -> repository, где:
+// middleware – функция валидатор
+// controller – функция, принимающая данные. Принимает json
+// service – функция проверки на то что с repository вернулось значение
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие
+// с этим массивом осуществляется только в repository. Массив находится в
+// приложении
+
+// class Client {
+//     constructor() {
+//         this.sendRequest()
+//     }
+
+//     sendRequest() {
+//         const btn = document.querySelector(".btn")
+//         btn.addEventListener("click", () => {
+//             try {
+//                 let mail = document.querySelector(".one").value
+//                 let pwd = document.querySelector(".two").value
+//                 if (this.checkValue(mail, pwd)) document.querySelector(".doPlus").innerHTML = JSON.stringify({ email: mail, pwd: pwd })
+//                 const clientData = JSON.stringify({
+//                     email: mail,
+//                     pwd: pwd
+//                 })
+//                 const server = new Server(clientData)
+//                 server.controller()
+//             } catch (error) {
+//                 alert(error.message)
+//             }
+
+//         })
+//     }
+//     checkValue(mail, pwd) {
+//         if (mail.length == 0) throw new Error(`wrong mail`)
+//         if (pwd.length == 0) throw new Error(`wrong pasword`)
+//         return true
+//     }
+// }
+
+
+
+// class Server {
+//     middlewar() {
+
+//     }
+//     controller(clientDate) {
+//         const parsedClientDate = JSON.parse(clientDate)
+//         this.service(parsedClientDate)
+//     }
+//     service() {
+//         this.repository(parsedClientDate)
+//     }
+//     repository(parsedClientDate) {
+//         const arrData = `[{
+//     { "id": 1, "email": "yesenia@mail.ru", "pwd": "pwd12345678" },
+//     { "id": 2, "email": "hanna@mail.ru", "pwd": "pwd123123" },
+//     { "id": 3, "email": "stanislau@mail.ru", "pwd": "pwdtest444" },
+//     { "id": 4, "email": "german@mail.ru", "pwd": "pwdqqq111" },
+//     { "id": 5, "email": "maria@mail.ru", "pwd": "pwd746552" }
+//     }]`
+//         const parsedDB = JSON.parse(arrData)
+//         const filtered = parsedDB.filter(el => el.mail === parsedClientDate.mail)
+//         filtered.push(parsedClientDate)
+//     }
+
+
+// }
+
+// const client = new Client()
+// const server = new Server()
+
+// 4. Реализуйте класс Word, и функцию isPalindrome которая будет выводить в alert
+// соответствующее будевое значение. Если значения 2 инпутов являются
+// палиндромом -> true, в противном случае false
+
+// 5. Реализуйте класс Word, и функцию isAnagram которая будет выводить в alert
+// соответствующее будевое значение. Если значения 2 инпутов являются
+// анаграммами -> true, в противном случае false
+
+
+class Word {
+    constructor() {
+        // this.isPalindrome()
+        this.isAnagramm()
+    }
+    // isPalindrome() {
+    //     let btn = document.querySelector(".btn")
+    //     btn.addEventListener("click", () => {
+    //         let firstStr = document.querySelector(".one").value
+    //         let secondStr = document.querySelector(".two").value.split(``).reverse(``).join(``)
+    //         try {
+    //             if (!firstStr === secondStr) throw new Error('строки не являются палиндромом')
+    //             alert(`слово ${firstStr} является палиндромом слова ${secondStr}`)
+    //         } catch (error) {
+    //             alert(error.message)
+    //         }
+    //     })
+    // }
+    isAnagramm() {
+        let btn = document.querySelector(".btn")
+        btn.addEventListener("click", () => {
+            let firstStr = document.querySelector(".one").value.split(``).sort().join(``)
+            let secondStr = document.querySelector(".two").value.split(``).sort().join(``)
+            try {
+                if (!firstStr == secondStr) throw new Error("строки не являются палиндромом")
+                console.log(firstStr);
+                console.log(secondStr);
+                console.log(firstStr === secondStr);
+            } catch (error) {
+                alert(error.message)
+            }
+        })
+    }
+
+}
+
+const word = new Word()
+
+
